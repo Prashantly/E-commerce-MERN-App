@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+
+.navbar {
+  background-color: #0a5071;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #085465; /* Add a border at the bottom of the navbar */
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 25px; /* Increased font size */
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.s-word {
+  color: rgb(210, 6, 6);
+  font-weight: 900;
+}
+
+.navbar-toggler-icon {
+  background-color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin-right: 20px;
+  letter-spacing: 1px;
+}
+
+.navbar-nav .nav-item a {
+  color: #fff;
+}
+
+.navbar-nav .nav-item a:hover {
+  color: #0a5071;
+}
+
+.dropdown-menu {
+  background-color: #0a5071;
+  border: none;
+  border-radius: 0;
+}
+
+.dropdown-item {
+  color: #fff;
+
+  font-weight: 400;
+  padding: 10px 20px;
+}
+
+.dropdown-item:hover {
+  color: #0a5071;
+}
+
+.dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Search Form */
+.cart-icon {
+  position: relative;
+  display: inline-block;
+}
+
+@media (max-width: 991.98px) {
+  /* Reduce padding on smaller screens */
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
+
+  /* Center-align the search form on smaller screens */
+  .navbar-nav .form-control {
+    text-align: center;
+  }
+}

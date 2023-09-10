@@ -1,0 +1,70 @@
+.page-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0a5071;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.product-form-container {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.image-upload-label {
+  width: 100%;
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.image-upload-label input[type="file"] {
+  display: none;
+}
+
+.image-preview-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.create-product-button {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.create-product-button:hover {
+  background-color: #0056b3;
+}

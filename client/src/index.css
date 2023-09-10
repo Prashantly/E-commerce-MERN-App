@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+.footer {
+  padding: 25px;
+  background: #16222a;
+  background: -webkit-linear-gradient(59deg, #3a6073, #16222a);
+  background: linear-gradient(59deg, #3a6073, #16222a);
+  text-align: center;
+}
+
+.footer-title {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-link {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-link-divider {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 5px;
+}
+
+.footer-link:hover {
+  color: #fa944b;
+  border-bottom: 1px solid #fa944b;
+}
+
+/* ==============Page not found============================= */
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 75.8vh;
+  text-align: center;
+  background-size: contain;
+  background-position: center;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.not-found-title {
+  font-size: 3rem;
+  color: #f05a49;
+  margin-bottom: 1rem;
+}
+
+.not-found-text {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.back-to-home-button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f05a49;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.back-to-home-button:hover {
+  background-color: #d34130;
+}
+
+/* ==============Contact Page css============================= */
+
+.contact-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.contact-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.contact-page > div {
+  flex: 1;
+  padding: 10px;
+}
+
+.contact-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.contact-details {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.contact-details h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p svg {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .contact-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-details {
+    margin-top: 20px;
+  }
+}
+
+/* ==============About Us Page Styles================== */
+
+.about-us-content {
+  padding: 40px 0;
+}
+
+.about-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.about-us-details h4 {
+  margin-top: 20px;
+}
+
+.about-us-details p {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .about-us-content {
+    padding: 20px 0;
+  }
+}
+
+/* ==============Products Styles============================= */
+
+.product-link {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+/* ==============Admin page Styles============================= */
+
+.admin-details-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-details-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-details-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-detail {
+  margin-bottom: 15px;
+}
+
+.admin-detail-label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #555;
+}
+
+.admin-detail-value {
+  font-size: 16px;
+  color: #333;
+}

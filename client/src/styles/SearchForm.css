@@ -1,0 +1,67 @@
+.main-search-input-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.main-search-input {
+  width: 100%;
+  width: 25rem;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-search-input-item {
+  flex: 1;
+}
+
+.main-search-input-item input {
+  width: 100%;
+}
+
+.form-control {
+  border: none;
+  border-radius: 5px;
+}
+
+.main-search-button {
+  border-radius: 0;
+  background-color: #000; /* Choose your button background color */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.main-search-button:hover {
+  background-color: green;
+  color: #fff;
+}
+
+/* Center-align the text inside the button */
+.main-search-button span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Adjust the padding for the input and button */
+.main-search-input-item input {
+  padding: 9px 20px;
+}
+.main-search-button {
+  padding: 12px 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .main-search-input {
+    width: 100%;
+    margin: 20px;
+  }
+}
