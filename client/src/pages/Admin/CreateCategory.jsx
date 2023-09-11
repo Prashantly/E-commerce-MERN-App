@@ -23,8 +23,6 @@ const CreateCategory = () => {
       const response = await axios.post("/api/v1/category/create-category", {
         name: name,
       });
-
-      console.log(response);
       if (response?.data?.success) {
         const name = response?.data?.category?.name;
         toast.success(`${name} category has been created successfully!!👍👍`, {
@@ -35,7 +33,7 @@ const CreateCategory = () => {
           },
         });
         setName("");
-        getAllCatgeory();
+        getAllCategory();
       }
     } catch (error) {
       console.log("Error***", error);
@@ -50,12 +48,11 @@ const CreateCategory = () => {
   };
 
   // ********************** ||Get All Categories|| *****************************************
-  const getAllCatgeory = async () => {
+  const getAllCategory = async () => {
     try {
-      const response = await axios.get("api/v1/category/get-category");
+      const response = await axios.get("/api/v1/category/get-category");
 
-      const data = response.data;
-
+      const data = response?.data;
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -66,7 +63,7 @@ const CreateCategory = () => {
   };
 
   useEffect(() => {
-    getAllCatgeory();
+    getAllCategory();
   }, []);
 
   // ********************** ||handle UPDATE category|| *****************************************
@@ -92,7 +89,7 @@ const CreateCategory = () => {
         setSelected(null);
         setUpdatedName("");
         setIsModalOpen(false);
-        getAllCatgeory();
+        getAllCategory();
       }
     } catch (error) {
       console.log("Error***", error);
@@ -123,7 +120,7 @@ const CreateCategory = () => {
           },
         });
 
-        getAllCatgeory();
+        getAllCategory();
       }
     } catch (error) {
       console.log("Error***", error);

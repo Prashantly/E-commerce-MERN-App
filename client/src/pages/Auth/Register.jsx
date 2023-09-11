@@ -23,8 +23,6 @@ const Register = () => {
         ...cred,
       });
 
-      // console.log(response);
-
       if (response && response.status === 201) {
         toast.success(response.data.message);
         navigate("/login");

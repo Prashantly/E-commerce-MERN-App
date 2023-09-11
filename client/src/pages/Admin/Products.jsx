@@ -17,9 +17,8 @@ const Products = () => {
 
       const data = response?.data;
 
-      if (data.success) {
+      if (data?.success) {
         setProducts(data.products);
-        console.log(data.message);
       }
     } catch (error) {
       console.log("Error while fetching products", error);

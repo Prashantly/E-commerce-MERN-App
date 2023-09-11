@@ -14,7 +14,7 @@ export default function useCategory() {
         setCategories(data?.category);
       }
     } catch (error) {
-      console.log("Error while getting categories");
+      console.log("Error while getting categories---->", error);
     }
   };
 

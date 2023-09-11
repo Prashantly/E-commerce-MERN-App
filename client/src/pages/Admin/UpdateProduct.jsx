@@ -5,12 +5,13 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
+import useCategory from "../../hooks/useCategory";
 const { Option } = Select;
 
 const UpdateProduct = () => {
   const params = useParams();
   const navigate = useNavigate();
-  const [categories, setCategories] = useState([]);
+  const categories = useCategory();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -29,7 +30,6 @@ const UpdateProduct = () => {
       );
 
       const data = response?.data;
-      console.log(data);
       if (data?.success) {
         const { _id, name, description, price, brand, category, stock } =
           data?.product;
@@ -48,28 +48,7 @@ const UpdateProduct = () => {
 
   useEffect(() => {
     getSingleProduct();
-    console.log("Image state after getSingleProduct:", image);
     //eslint-disable-next-line
-  }, []);
-
-  // ********************** ||Get All Categories|| *****************************************
-  const getAllCatgeory = async () => {
-    try {
-      const response = await axios.get(`/api/v1/category/get-category`);
-
-      const data = response.data;
-
-      if (data?.success) {
-        setCategories(data?.category);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong in getting all categories😮");
-    }
-  };
-
-  useEffect(() => {
-    getAllCatgeory();
   }, []);
 
   // ********************** ||Update Product|| *****************************************
@@ -85,7 +64,6 @@ const UpdateProduct = () => {
       productData.append("stock", stock);
       productData.append("brand", brand);
       image && productData.append("image", image);
-      console.log(shipping);
       const response = await axios.put(
         `/api/v1/product/update-product/${id}`,
         productData
@@ -122,7 +100,6 @@ const UpdateProduct = () => {
       let ans = window.prompt(
         "Are you sure? You want to permanently delete this product"
       );
-      console.log(ans);
       if (!ans) return;
       const response = await axios.delete(
         `/api/v1/product/delete-product/${id}`

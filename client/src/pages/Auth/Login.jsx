@@ -23,9 +23,6 @@ const Login = () => {
         ...cred,
       });
 
-      console.log(response);
-      console.log(response.data);
-
       if (response && response.status === 200) {
         toast.success(response.data && response.data.message, {
           style: {

@@ -118,7 +118,6 @@ const HomePage = () => {
     if (checked.length || radio.length) {
       //get filtered produts
       const getFilteredProducts = async () => {
-        console.log(checked, radio);
         try {
           const response = await axios.post(
             "/api/v1/product/products-filters",

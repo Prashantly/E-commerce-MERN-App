@@ -6,11 +6,11 @@ import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
 import "../../styles/createProduct.css";
+import useCategory from "../../hooks/useCategory";
 const { Option } = Select;
 
 const CreateProduct = () => {
   const navigate = useNavigate();
-  const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -19,26 +19,7 @@ const CreateProduct = () => {
   const [brand, setBrand] = useState("");
   const [shipping, setShipping] = useState("");
   const [image, setImage] = useState("");
-
-  // ********************** ||Get All Categories|| *****************************************
-  const getAllCatgeory = async () => {
-    try {
-      const response = await axios.get("/api/v1/category/get-category");
-
-      const data = response.data;
-
-      if (data?.success) {
-        setCategories(data?.category);
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong in getting all categories😮");
-    }
-  };
-
-  useEffect(() => {
-    getAllCatgeory();
-  }, []);
+  const categories = useCategory();
 
   // ********************** ||Create New Product|| *****************************************
   const handleCreateProduct = async (e) => {

@@ -26,7 +26,6 @@ const AdminOrders = () => {
   const getAllOrders = async () => {
     try {
       const response = await axios.get("/api/v1/auth/all-orders");
-      console.log(response);
       const data = response?.data;
 
       setAllOrders(data);
