@@ -7,12 +7,11 @@ import { useCart } from "../context/cart";
 import { useNavigate } from "react-router-dom";
 import "../styles/HomePage.css";
 import { Typewriter } from "react-simple-typewriter";
-import { toast } from "react-hot-toast";
 import { FadeLoader } from "react-spinners";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [cart, setCart] = useCart();
+  const { handleCartClick } = useCart();
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
@@ -138,14 +137,6 @@ const HomePage = () => {
     }
   }, [checked, radio]);
 
-  const handleCartClick = (e, product) => {
-    e.preventDefault();
-    //    add to cart
-    setCart([...cart, product]);
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
-    toast.success(`${product.name} added to cart!!✌️✌️`);
-  };
-
   return (
     <Layout title={"All Products - Best Offers"}>
       <div style={{ position: "relative" }}>
@@ -258,7 +249,7 @@ const HomePage = () => {
           ) : (
             <div className="d-flex justify-content-between flex-wrap align-items-center">
               {products.length === 0 && (
-                <h4 className="text-muted">
+                <h4 className="text-muted mx-auto">
                   Products not available in price range{" "}
                   {radio.toLocaleString("en-IN", {
                     style: "currency",

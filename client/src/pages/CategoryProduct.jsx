@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import { useParams, useNavigate } from "react-router-dom";
 import { ClipLoader } from "../components/Spinner";
-import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useCart } from "../context/cart";
 
 const CategoryProduct = () => {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useCart();
+  const { handleCartClick } = useCart();
   const [category, setCategory] = useState([]);
   const [loading, setLoading] = useState(true);
   const params = useParams();
@@ -39,14 +38,6 @@ const CategoryProduct = () => {
       getProductCat();
     }
   }, [params?.slug]);
-
-  const handleCartClick = (e, product) => {
-    e.preventDefault();
-    //    add to cart
-    setCart([...cart, product]);
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
-    toast.success(`${product.name} added to cart!!✌️✌️`);
-  };
 
   return (
     <Layout

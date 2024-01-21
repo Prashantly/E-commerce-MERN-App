@@ -4,12 +4,11 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { ClipLoader } from "../components/Spinner";
 import { useCart } from "../context/cart";
-import { toast } from "react-hot-toast";
 
 const ProductDetails = () => {
   const params = useParams();
   const navigate = useNavigate();
-  const [cart, setCart] = useCart();
+  const { handleCartClick } = useCart();
   const [product, setProduct] = useState({});
   const [relatedProduct, setRealatedProduct] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,14 +51,6 @@ const ProductDetails = () => {
       console.log("Error while getting similar products", error);
       setLoading(false);
     }
-  };
-
-  const handleCartClick = (e, product) => {
-    e.preventDefault();
-    //    add to cart
-    setCart([...cart, product]);
-    localStorage.setItem("cart", JSON.stringify([...cart, product]));
-    toast.success(`${product.name} added to cart!!✌️✌️`);
   };
 
   return (

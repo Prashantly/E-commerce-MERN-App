@@ -1,9 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import { useSearch } from "../context/Search";
-import { Link } from "react-router-dom";
+import { useCart } from "../context/cart";
+import { Link, useNavigate } from "react-router-dom";
 
 const Search = () => {
+  const navigate = useNavigate();
+  const { handleCartClick } = useCart();
   const [search] = useSearch();
   return (
     <Layout title={"Search results"}>
@@ -54,8 +57,21 @@ const Search = () => {
                   </p>
                   <p className="card-text fw-bold">Price : ₹{item.price}</p>
                   <div>
-                    <Link className="btn btn-primary ms-2">More details</Link>
-                    <Link className="btn btn-secondary ms-2">ADD TO CART</Link>
+                    <Link
+                      className="btn btn-primary ms-2"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        navigate(`/product/${item.slug}`);
+                      }}
+                    >
+                      More details
+                    </Link>
+                    <button
+                      className="btn btn-secondary ms-2"
+                      onClick={(e) => handleCartClick(e, item)}
+                    >
+                      ADD TO CART
+                    </button>
                   </div>
                 </div>
               </div>

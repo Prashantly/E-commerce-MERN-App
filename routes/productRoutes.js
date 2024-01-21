@@ -69,7 +69,6 @@ router.get("/product-list/:page", productListController);
 //search products
 router.get(
   "/search/:keyword",
-  passport.authenticate("jwt", { session: false }),
   searchProductController
 );
 

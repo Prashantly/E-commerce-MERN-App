@@ -250,6 +250,7 @@ export const passwordChangeController = async (req, res) => {
         },
         {
           //To make the changes to reflect in the console
+          //note: you're telling Mongoose to return the updated document after the update operation has been applied to it.
           new: true,
         }
       );

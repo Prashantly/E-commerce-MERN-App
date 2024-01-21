@@ -10,7 +10,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const CartPage = () => {
-  const [cart, setCart] = useCart();
+  const { cart, setCart } = useCart();
   const [auth] = useAuth();
 
   const [loading, setLoading] = useState(false);
@@ -65,7 +65,6 @@ const CartPage = () => {
               toast.error("Ooops🫢🫢 Token got expired. Please login again.");
               navigate("/login");
             }
-            console.log("ERROR", error);
             setLoading(false);
             reject(error);
           });
@@ -102,8 +101,11 @@ const CartPage = () => {
         </div>
         <div className="row">
           <div className="col-md-8">
-            {cart?.map((product) => (
-              <div className="row mb-3 p-3 card flex-row" key={product._id}>
+            {cart?.map((product, index) => (
+              <div
+                className="row mb-3 p-3 card flex-row"
+                key={`${product._id}-${index}`}
+              >
                 <div className="col-md-4">
                   <img
                     src={`/api/v1/product/product-image/${product._id}`}
